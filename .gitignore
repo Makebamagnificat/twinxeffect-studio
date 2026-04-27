@@ -4,3 +4,4 @@ build/
 *.mp4
 *.zip
 .env
+js/firebase-secret.js

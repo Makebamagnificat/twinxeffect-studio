@@ -7,7 +7,7 @@ import { getAnalytics } from "firebase/analytics";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCUCHbMqdlcQlMrVcC6qmlLzq91vz2ELlk",
+  apikey:import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "twinxeffect-studio.firebaseapp.com",
   projectId: "twinxeffect-studio",
   storageBucket: "twinxeffect-studio.firebasestorage.app",
