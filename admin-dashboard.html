@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TwinxEffect Studios - Admin Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-emerald-50 min-h-screen">
+  <!-- Background Logo -->
+<div class="fixed inset-0 z-0 pointer-events-none flex items-center justify-center">
+  <img src="./assets/images/logo.png" 
+       class="h-[80vh] w-auto object-contain opacity-60 scale-145"
+       alt="background logo">
+</div>
+  <!-- Top Navigation -->
+  <nav class="bg-white shadow-sm border-b border-emerald-100">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+      <img src="./assets/images/logo.png" alt="Twinx Effect Studios" class="h-20 w-auto">
+      </div>
+      
+      <!-- Logout button - now guaranteed to work -->
+      <button onclick="logout()" 
+        class="flex items-center gap-2 px-6 py-3 bg-red-50 hover:bg-red-100 text-red-600 font-medium rounded-3xl transition-all">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+      </button>
+    </div>
+  </nav>
+
+  <div class="max-w-7xl mx-auto px-6 py-10">
+    <div class="flex justify-between items-center mb-10">
+      <h1 class="text-4xl font-semibold text-emerald-900">Admin Dashboard</h1>
+      <div class="text-emerald-600 text-lg">Total Bookings: <span id="totalClients" class="font-bold text-3xl text-emerald-700">0</span></div>
+    </div>
+
+    <!-- Bookings Table -->
+    <div class="bg-white rounded-3xl shadow overflow-hidden">
+      <div class="p-8 border-b flex justify-between items-center">
+        <h2 class="text-2xl font-semibold text-emerald-900">All Bookings & Schedules</h2>
+        <button onclick="refreshBookings()" 
+          class="px-6 py-3 bg-emerald-100 hover:bg-emerald-200 rounded-3xl text-sm font-medium flex items-center gap-2">
+          <i class="fa-solid fa-rotate"></i> Refresh
+        </button>
+      </div>
+      <table class="w-full" id="bookingsTable">
+        <thead class="bg-emerald-50">
+          <tr>
+            <th class="px-8 py-5 text-left font-medium">Client</th>
+            <th class="px-8 py-5 text-left font-medium">Category</th>
+            <th class="px-8 py-5 text-left font-medium">Date</th>
+            <th class="px-8 py-5 text-left font-medium">Status</th>
+            <th class="px-8 py-5 text-center font-medium">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="bookingsBody" class="divide-y text-sm"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Load the shared dashboard logic (this contains the working logout function) -->
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TwinxEffect Studios - Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-emerald-50 min-h-screen">
+  <!-- Background Logo -->
+<div class="fixed inset-0 z-0 pointer-events-none flex items-center justify-center">
+  <img src="./assets/images/logo.png" 
+       class="h-[80vh] w-auto object-contain opacity-60"
+       alt="background logo">
+</div>
+  <!-- Navigation -->
+  <nav class="bg-white/90 backdrop-blur-md shadow-sm border-b border-emerald-100">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+      <img src="./assets/images/logo.png" alt="Twinx Effect Studios" class="h-20 w-70">
+      </div>
+      <div class="flex items-center gap-6">
+        <span id="userGreeting" class="text-emerald-700 font-medium"></span>
+        <button onclick="logout()" class="px-5 py-2 text-sm font-medium text-emerald-700 hover:bg-emerald-100 rounded-2xl">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="max-w-7xl mx-auto px-6 py-10">
+    <h1 class="text-4xl font-semibold text-emerald-900 mb-1">Hello, <span id="userName"></span> 👋</h1>
+    <p class="text-emerald-600 mb-10">Book your next professional photoshoot</p>
+
+      <!-- === BOOKING SECTION WITH PACKAGES === -->
+    <div class="bg-white/90 backdrop-blur-md rounded-3xl shadow p-8 mb-12">
+      <h2 class="text-2xl font-semibold text-emerald-800 mb-6">What type of shoot do you need?</h2>
+      
+      <select id="categorySelect" onchange="showPricing()" 
+        class="w-full px-6 py-5 text-lg rounded-2xl border border-emerald-200 focus:border-emerald-500 outline-none">
+        <option value="">-- Select Category --</option>
+        <option value="wedding">Wedding Shoot</option>
+        <option value="funeral">Funeral / Memorial Shoot</option>
+        <option value="birthday">Birthday Shoot</option>
+        <option value="regular">Regular / Portrait Shoot</option>
+        <option value="pageant">Pageant / Fashion Shoot</option>
+      </select>
+
+      <!-- Packages Section -->
+      <div id="pricingSection" class="hidden mt-8">
+        <div class="bg-white rounded-3xl shadow p-8">
+          <h3 class="text-2xl font-semibold mb-6 text-emerald-800" id="selectedCategory">Package Options</h3>
+          
+          <div id="packagesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Packages will appear here -->
+          </div>
+
+          <!-- WhatsApp + Schedule -->
+          <div class="mt-10 pt-6 border-t border-emerald-100 flex gap-4">
+                       <!-- Updated WhatsApp button with pre-filled message -->
+            <a onclick="bookViaWhatsApp()" 
+              class="flex-1 bg-green-500 hover:bg-green-600 text-white py-4 rounded-2xl text-center font-medium flex items-center justify-center gap-2 cursor-pointer">
+              <i class="fa-brands fa-whatsapp"></i> Book via WhatsApp
+            </a>
+            <button onclick="scheduleShoot()" 
+              class="flex-1 border-2 border-emerald-600 text-emerald-700 hover:bg-emerald-50 py-4 rounded-2xl font-medium">
+              Schedule Date & Time
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✅ POLICY SECTION -->
+<div class="bg-white rounded-3xl shadow p-8 mt-16 border-t pt-10">
+  <h2 class="text-3xl font-bold text-emerald-900 mb-6">Rescheduling Policy</h2>
+  <ol class="list-decimal pl-6 text-emerald-700 mb-8 space-y-2">
+    <li>In case of a rescheduled event, please notify us as soon as possible</li>
+    <li>Rescheduling attracts an additional charge depending on availability and new arrangements</li>
+  </ol>
+
+  <h2 class="text-3xl font-bold text-emerald-900 mb-6">Cancellation Policy</h2>
+  <ol class="list-decimal pl-6 text-emerald-700 mb-8 space-y-2">
+    <li>If the client cancels the event, only 40% of the initial 70% deposit will be refunded.</li>
+    <li>The remaining amount will be retained to cover administrative and booking cost.</li>
+  </ol>
+
+  <h2 class="text-3xl font-bold text-emerald-900 mb-6">Delivery Timeline</h2>
+  <p class="text-emerald-700 mb-8">
+    The client should expect the final work within four weeks after the event date.
+  </p>
+
+  <h2 class="text-3xl font-bold text-emerald-900 mb-6">Collection Policy</h2>
+  <p class="text-emerald-700">
+    If the client fails to collect or follow up on the final work within one month after completion,
+    the company will not be held responsible for any loss, damage, or data issues that may occur.
+  </p>
+</div>
+
+
+    <!-- OUR WORK GALLERY (unchanged - keeps your current beautiful look) -->
+    <div>
+      <h2 class="text-3xl font-semibold text-emerald-900 mb-6">Our Work</h2>
+      <div class="bg-white rounded-3xl shadow p-8">
+        <label class="block text-emerald-800 mb-3 font-medium">Choose category to see trailers & photos</label>
+        <select id="galleryCategory" onchange="loadGallery()" 
+          class="w-full px-6 py-5 text-lg rounded-2xl border border-emerald-200 focus:border-emerald-500 outline-none">
+          <option value="">-- Select Category --</option>
+          <option value="wedding">Wedding Trailer</option>
+          <option value="funeral">Funeral Memorial</option>
+          <option value="birthday">Birthday Shoot</option>
+          <option value="regular">Regular Shoot</option>
+          <option value="pageant">Pageant / Fashion</option>
+          <option value="rifa">Rifa & Selpharma Shoots</option>
+        </select>
+
+        <div id="galleryContent" class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+      </div>
+
+      <!-- Social Media Follow Section -->
+    <div class="mt-16 bg-white rounded-3xl shadow p-8 text-center">
+      <h3 class="text-2xl font-semibold text-emerald-900 mb-4">Follow Us on Social Media</h3>
+      <p class="text-emerald-600 mb-8">Stay updated with our latest shoots, behind-the-scenes, and offers</p>
+      
+      <div class="flex justify-center gap-8 text-4xl">
+        <a href="https://www.facebook.com/share/14cLY1skyCk/?mibextid=wwXIfr" target="_blank" 
+          class="text-emerald-600 hover:text-emerald-700 transition hover:scale-110">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/twinxeffect_memories?igsh=MTB1eHpmMWg1amxlMA%3D%3D&utm_source=qr" target="_blank" 
+          class="text-emerald-600 hover:text-emerald-700 transition hover:scale-110">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com/@twinxeffect_studios?_r=1&_t=ZS-95VUhZzH1QQ" target="_blank" 
+          class="text-emerald-600 hover:text-emerald-700 transition hover:scale-110">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+      </div>
+      
+      <p class="text-xs text-emerald-500 mt-8">@twinxeffectstudio</p>
+    </div>
+    </div>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+  <script src="js/paystack.js"></script>
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+</body>
+</html>
