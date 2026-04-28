@@ -128,7 +128,7 @@ function bookViaWhatsApp() {
   window.open(whatsappUrl, '_blank');
 }
 
-// === REAL MEDIA GALLERY - Updated for Vercel (public folder) ===
+// === REAL MEDIA GALLERY - Final Version for Vercel (public folder) ===
 const mockMedia = {
   wedding: [
      { type: 'video', title: 'Wedding Trailer', url: '/videos/wedding/wedding-trailer.mp4', desc: 'Cinematic wedding highlight reel' },
