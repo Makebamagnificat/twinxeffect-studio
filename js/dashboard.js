@@ -128,11 +128,74 @@ function bookViaWhatsApp() {
   window.open(whatsappUrl, '_blank');
 }
 
-// === TEST GALLERY - Minimal Version to Debug Vercel ===
+// === REAL MEDIA GALLERY - Final Version for Vercel (public folder) ===
 const mockMedia = {
   wedding: [
-    { type: 'image', title: 'Test Wedding Image', url: '/images/wedding/wedding-1.jpeg', desc: 'Test if images load' },
-    { type: 'video', title: 'Test Wedding Trailer', url: '/videos/wedding/wedding-trailer.mp4', desc: 'Test if videos load' }
+     { type: 'video', title: 'Wedding Trailer', url: '/videos/wedding/wedding-trailer.mp4', desc: 'Cinematic wedding highlight reel' },
+    { type: 'image', title: 'Wedding image', url: '/images/wedding/wedding-1.jpeg', desc: 'Traditional Ghanaian wedding' },
+    { type: 'image', title: 'Wedding image', url: '/images/wedding/wedding-2.jpeg', desc: 'Beautiful couple portrait' },
+    { type: 'image', title: 'Wedding image', url: '/images/wedding/wedding-3.jpeg', desc: 'Joyful wedding moment' },
+    { type: 'image', title: 'Wedding image', url: '/images/wedding/wedding-4.jpeg', desc: 'Elegant wedding shot' },
+    { type: 'image', title: 'Wedding image', url: '/images/wedding/wedding-5.jpeg', desc: 'Romantic portrait' },
+    { type: 'image', title: 'Wedding image', url: '/images/wedding/wedding-6.jpeg', desc: 'Bride' },
+    { type: 'image', title: 'Wedding image', url: '/images/wedding/wedding-7.jpeg', desc: 'Bride' },
+    { type: 'image', title: 'Wedding image', url: '/images/wedding/wedding-8.jpeg', desc: 'Bride and groom' },
+    { type: 'image', title: 'Wedding image', url: '/images/wedding/wedding-9.jpeg', desc: 'Wedding group shot' }
+  ],
+  funeral: [
+    { type: 'video', title: 'Funeral Trailer', url: '/videos/funeral/The late Mr. seth & Mrs. Rebecca Addy-trailer.mp4', desc: 'Memorial tribute video' }
+  ],
+  birthday: [
+      { type: 'image', title: 'Birthday 1', url: '/images/birthday/birthday-1.jpeg', desc: 'Cake smash moment' },
+      { type: 'image', title: 'Birthday 2', url: '/images/birthday/birthday-2.jpeg', desc: 'Cake smash moment' },
+      { type: 'image', title: 'Birthday 3', url: '/images/birthday/birthday-3.jpeg', desc: 'Cake smash moment' },
+      { type: 'image', title: 'Birthday 4', url: '/images/birthday/birthday-4.jpeg', desc: 'Cake smash moment' },
+      { type: 'image', title: 'Birthday 5', url: '/images/birthday/birthday-5.jpeg', desc: 'Cake smash moment' },
+      { type: 'image', title: 'Birthday 6', url: '/images/birthday/birthday-6.jpeg', desc: 'Cake smash moment' },
+      { type: 'image', title: 'Birthday 7', url: '/images/birthday/birthday-7.jpeg', desc: 'Cake smash moment' },
+      { type: 'image', title: 'Birthday 8', url: '/images/birthday/birthday-8.jpeg', desc: 'Cake smash moment' },
+      { type: 'image', title: 'Birthday 9', url: '/images/birthday/birthday-9.jpeg', desc: 'Cake smash moment' },
+      { type: 'image', title: 'Birthday 10', url: '/images/birthday/birthday-10.jpeg', desc: 'Cake smash moment' },
+      { type: 'image', title: 'Birthday 11', url: '/images/birthday/birthday-11.jpeg', desc: 'Cake smash moment' },
+      { type: 'image', title: 'Birthday 12', url: '/images/birthday/birthday-12.jpeg', desc: 'Cake smash moment' },
+      { type: 'image', title: 'Birthday 13', url: '/images/birthday/birthday-13.jpeg', desc: 'Fun birthday session' },
+      { type: 'image', title: 'Birthday 14', url: '/images/birthday/birthday-14.jpeg', desc: 'Fun birthday session' }
+  ],
+  regular: [
+    { type: 'image', title: 'Regular Portrait 1', url: '/images/regular/regular-1.jpeg', desc: 'Classic studio portrait' },
+    { type: 'image', title: 'Regular Portrait 2', url: '/images/regular/regular-2.jpeg', desc: 'Natural lighting portrait' },
+    { type: 'image', title: 'Regular Portrait 3', url: '/images/regular/regular-3.jpeg', desc: 'Natural lighting portrait' },
+    { type: 'image', title: 'Regular Portrait 4', url: '/images/regular/regular-4.jpeg', desc: 'Natural lighting portrait' },
+    { type: 'image', title: 'Regular Portrait 5', url: '/images/regular/regular-5.jpeg', desc: 'Natural lighting portrait' },
+    { type: 'image', title: 'Regular Portrait 6', url: '/images/regular/regular-6.jpeg', desc: 'Natural lighting portrait' },
+    { type: 'image', title: 'Regular Portrait 7', url: '/images/regular/regular-7.jpeg', desc: 'Natural lighting portrait' },
+    { type: 'image', title: 'Regular Portrait 8', url: '/images/regular/regular-8.jpeg', desc: 'Natural lighting portrait' },
+    { type: 'image', title: 'Regular Portrait 9', url: '/images/regular/regular-9.jpeg', desc: 'Natural lighting portrait' },
+    { type: 'image', title: 'Regular Portrait 10', url: '/images/regular/regular-10.jpeg', desc: 'Natural lighting portrait' },
+    { type: 'image', title: 'Regular Portrait 11', url: '/images/regular/regular-11.jpeg', desc: 'Natural lighting portrait' },
+    { type: 'image', title: 'Regular Portrait 12', url: '/images/regular/regular-12.jpeg', desc: 'Natural lighting portrait' },
+    { type: 'image', title: 'Regular Portrait 13', url: '/images/regular/regular-13.jpeg', desc: 'Natural lighting portrait' },
+    { type: 'image', title: 'Regular Portrait 14', url: '/images/regular/regular-14.jpeg', desc: 'Natural lighting portrait' }
+  ],
+  pageant: [
+    { type: 'image', title: 'Pageant 1', url: '/images/pageant/pageant-1.jpeg', desc: 'Fashion pageant shoot' },
+    { type: 'image', title: 'Pageant 2', url: '/images/pageant/pageant-2.jpeg', desc: 'Runway glamour' },
+    { type: 'image', title: 'Pageant 3', url: '/images/pageant/pageant-3.jpeg', desc: 'Runway glamour' },
+    { type: 'image', title: 'Pageant 4', url: '/images/pageant/pageant-4.jpeg', desc: 'Runway glamour' },
+    { type: 'image', title: 'Pageant 5', url: '/images/pageant/pageant-5.jpeg', desc: 'Runway glamour' },
+    { type: 'image', title: 'Pageant 6', url: '/images/pageant/pageant-6.jpeg', desc: 'Runway glamour' },
+    { type: 'image', title: 'Pageant 7', url: '/images/pageant/pageant-7.jpeg', desc: 'Runway glamour' },
+    { type: 'image', title: 'Pageant 8', url: '/images/pageant/pageant-8.jpeg', desc: 'Runway glamour' },
+    { type: 'image', title: 'Pageant 9', url: '/images/pageant/pageant-9.jpeg', desc: 'Runway glamour' },
+    { type: 'image', title: 'Pageant 10', url: '/images/pageant/pageant-10.jpeg', desc: 'Runway glamour' },
+    { type: 'image', title: 'Pageant 11', url: '/images/pageant/pageant-11.jpeg', desc: 'Runway glamour' },
+    { type: 'image', title: 'Pageant 12', url: '/images/pageant/pageant-12.jpeg', desc: 'Runway glamour' },
+    { type: 'image', title: 'Pageant 13', url: '/images/pageant/pageant-13.jpeg', desc: 'Runway glamour' },
+    { type: 'image', title: 'Pageant 14', url: '/images/pageant/pageant-14.jpeg', desc: 'Runway glamour' }
+  ],
+  rifa: [
+    { type: 'video', title: 'RIFA Trailer', url: '/videos/rifa/RIFA-trailer.mp4', desc: 'Rifa campaign highlight' },
+    { type: 'video', title: 'Selpharma Trailer', url: '/videos/selpharma/selpharma-trailer.MP4', desc: 'Selpharma campaign' }
   ]
 };
 
